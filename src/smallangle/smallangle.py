@@ -3,6 +3,7 @@ import numpy as np
 from numpy import pi
 import pandas as pd
 
+#Ik maak hier een groep commando's
 @click.group()
 def actie():
     pass
@@ -33,6 +34,6 @@ def tan(number):
     print(df)
     return
 
-
+# Hier roep ik de groep actie aan
 if __name__ == "__main__":
-    sin(10)
+    actie()
