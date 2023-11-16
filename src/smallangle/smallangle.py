@@ -3,16 +3,21 @@ import numpy as np
 from numpy import pi
 import pandas as pd
 
-
+@click.group()
+def actie():
+    pass
+@actie.command()
+@click.argument("number")
 def sin(number):
-    x = np.linspace(0, 2 * pi, number)
+    x = np.linspace(0, 2 * pi, int(number))
     df = pd.DataFrame({"x": x, "sin (x)": np.sin(x)})
     print(df)
     return
 
-
+@actie.command()
+@click.argument("number")
 def tan(number):
-    x = np.linspace(0, 2 * pi, number)
+    x = np.linspace(0, 2 * pi, int(number))
     df = pd.DataFrame({"x": x, "tan (x)": np.tan(x)})
     print(df)
     return
