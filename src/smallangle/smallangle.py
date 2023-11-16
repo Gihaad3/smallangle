@@ -6,9 +6,15 @@ import pandas as pd
 @click.group()
 def actie():
     pass
+
 @actie.command()
 @click.argument("number")
 def sin(number):
+    """calculates a sin()
+
+    Args:
+        number (int): gives the amount of steps
+    """    
     x = np.linspace(0, 2 * pi, int(number))
     df = pd.DataFrame({"x": x, "sin (x)": np.sin(x)})
     print(df)
@@ -17,6 +23,11 @@ def sin(number):
 @actie.command()
 @click.argument("number")
 def tan(number):
+    """calculates a tan()
+
+    Args:
+        number (int): gives the amount of steps
+    """    
     x = np.linspace(0, 2 * pi, int(number))
     df = pd.DataFrame({"x": x, "tan (x)": np.tan(x)})
     print(df)
